@@ -25,15 +25,33 @@ Console.WriteLine(Mine.gain_stone); // affichera 10
 Console.WriteLine(Mine.stone_cost); // affichera 2
 Console.WriteLine(Mine.wood_cost); // affichera 1
 
-Village myVillage = new Village("Marianne la créatrice");
-myVillage.mineStone(50); // Affichera: Il n'y a pas assez de villageois
-Console.WriteLine(myVillage.getStone()); // Affichera 10
-Console.WriteLine(myVillage.getWood());// Affichera 10
-myVillage.mineStone(6); // Affichera : Il n'y a pas assez de ressources
-Console.WriteLine(myVillage.getStone()); // Affichera 10
-Console.WriteLine(myVillage.getWood()); // Affichera 10
-myVillage.mineStone(5);
-myVillage.mineStone(5);
-Console.WriteLine(myVillage.getStone()); // Affichera 90
-Console.WriteLine(myVillage.getWood()); // Affichera 0
-myVillage.mineStone(5); // Affichera : Il n'y a pas assez de ressources
+// Village myVillage = new Village("Marianne la créatrice");
+// myVillage.mineStone(50); // Affichera: Il n'y a pas assez de villageois
+// Console.WriteLine(myVillage.getStone()); // Affichera 10
+// Console.WriteLine(myVillage.getWood());// Affichera 10
+// myVillage.mineStone(6); // Affichera : Il n'y a pas assez de ressources
+// Console.WriteLine(myVillage.getStone()); // Affichera 10
+// Console.WriteLine(myVillage.getWood()); // Affichera 10
+// myVillage.mineStone(5);
+// myVillage.mineStone(5);
+// Console.WriteLine(myVillage.getStone()); // Affichera 90
+// Console.WriteLine(myVillage.getWood()); // Affichera 0
+// myVillage.mineStone(5); // Affichera : Il n'y a pas assez de ressources
+
+
+Console.WriteLine(Forest.gain_wood); //affichera 10
+Console.WriteLine(Forest.stone_cost); //affichera 2
+Console.WriteLine(Forest.wood_cost); //affichera 1
+Forest test = new Forest();
+
+Village myVillage = new Village("Victor le createur");
+myVillage.cutWood(50); // affichera Il n'y a pas assez de villageois
+Console.WriteLine(myVillage.getStone()); // afficher 10
+Console.WriteLine(myVillage.getWood()); // afficher 10
+myVillage.cutWood(6); // affichera Il n'y a pas assez de ressource
+Console.WriteLine(myVillage.getStone()); // afficher 10
+Console.WriteLine(myVillage.getWood()); // afficher 10
+myVillage.cutWood(5);myVillage.cutWood(5); // affichera Il n'y a pas assez de ressource
+Console.WriteLine(myVillage.getStone()); // afficher 0
+Console.WriteLine(myVillage.getWood()); // afficher 55
+myVillage.cutWood(5); // affichera Il n'y a pas assez de ressource

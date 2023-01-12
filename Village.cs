@@ -7,6 +7,7 @@ public class Village {
     public int villageois = 0;
     public House []listHouse;   //c'est un tab
     public Mine Mine;
+    public Forest forest;
 
 //constructeur de la classe 
     public Village(string name){
@@ -17,7 +18,7 @@ public class Village {
         this.listHouse = new House [1];    
         this.listHouse[0] = this.chefHome;
         this.Mine = new Mine();    //Creation d'une mine (affichage de "Mine created")
-       
+        this.forest = new Forest();
     }
 
     public string getName(){
@@ -53,8 +54,6 @@ public class Village {
     }
 
         public void mineStone(int nbvillageois){
-
-
             //verif si pas trop de villageois par rapport au nb de villageois de base dans le village
             //else if verif si assez de pierres 
             //verif si assez de pierre (mine.wood_cost * villageois < wood) 
@@ -71,6 +70,22 @@ public class Village {
                     myRessources.addStone(Mine.mineStone(nbvillageois));   //on récup notre méthode addStone qui ajoute des pierres 
                     //addStone prend en paramètre un nombre qui devient ici la méthode mineStone
             }  
-    }
+        }
 
+        public void cutWood(int nbvillageois){
+            if (nbvillageois > this.villageois){
+                Console.WriteLine("ya pas assez de monde sorry");
+            }   
+            else if (Forest.stone_cost * nbvillageois > getStone()  || Forest.wood_cost * nbvillageois >  getWood() )
+            {
+                Console.WriteLine("ya pas assez de ressources sorry");
+            }   
+            else 
+            {
+                myRessources.useStone(Forest.stone_cost * nbvillageois);
+                myRessources.useWood(Forest.wood_cost * nbvillageois);
+                myRessources.addWood(forest.cutWood(nbvillageois)); 
+            }  
+        }  
 }
+
