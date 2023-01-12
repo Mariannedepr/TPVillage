@@ -6,6 +6,7 @@ public class Village {
     public House chefHome;    //chefHome peut maintenant utiliser les méthodes de la classe house
     public int villageois = 0;
     public House []listHouse;   //c'est un tab
+    public Mine Mine;
 
 //constructeur de la classe 
     public Village(string name){
@@ -15,6 +16,7 @@ public class Village {
         this.villageois = House.villageois;   //comme mon attribut villageois est public dans ma classe House on peut le call ici
         this.listHouse = new House [1];    
         this.listHouse[0] = this.chefHome;
+        this.Mine = new Mine();    //Creation d'une mine (affichage de "Mine created")
        
     }
 
@@ -48,6 +50,27 @@ public class Village {
         //on va réattribuer la valeur de notre nouveau tableau à notre ancien tableau :
         listHouse = listHouse2;
         this.villageois = listHouse.Length * House.villageois;
+    }
+
+        public void mineStone(int nbvillageois){
+
+
+            //verif si pas trop de villageois par rapport au nb de villageois de base dans le village
+            //else if verif si assez de pierres 
+            //verif si assez de pierre (mine.wood_cost * villageois < wood) 
+            //si pas asseez : ressource insufisantes
+            //si c'est ok on pioche
+
+            if (nbvillageois > this.villageois){
+                Console.WriteLine("ya pas assez de monde sorry");
+            }   else if (Mine.stone_cost * nbvillageois > getStone()  || Mine.wood_cost * nbvillageois >  getWood() ){
+                Console.WriteLine("ya pas assez de ressources sorry");
+            }   else {
+                    myRessources.useStone(Mine.stone_cost * nbvillageois);
+                    myRessources.useWood(Mine.wood_cost * nbvillageois);
+                    myRessources.addStone(Mine.mineStone(nbvillageois));   //on récup notre méthode addStone qui ajoute des pierres 
+                    //addStone prend en paramètre un nombre qui devient ici la méthode mineStone
+            }  
     }
 
 }

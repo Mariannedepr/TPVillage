@@ -32,4 +32,8 @@ public class Ressources {
         
     }
 
+    public void addStone(int nbr){
+        stones += nbr;
+    }
+
 }
