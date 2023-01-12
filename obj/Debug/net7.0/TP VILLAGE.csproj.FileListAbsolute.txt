@@ -1,0 +1,15 @@
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\obj\Debug\net7.0\TP VILLAGE.csproj.AssemblyReference.cache
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\obj\Debug\net7.0\TP VILLAGE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\obj\Debug\net7.0\TP VILLAGE.AssemblyInfoInputs.cache
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\obj\Debug\net7.0\TP VILLAGE.AssemblyInfo.cs
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\obj\Debug\net7.0\TP VILLAGE.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\bin\Debug\net7.0\TP VILLAGE.exe
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\bin\Debug\net7.0\TP VILLAGE.deps.json
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\bin\Debug\net7.0\TP VILLAGE.runtimeconfig.json
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\bin\Debug\net7.0\TP VILLAGE.dll
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\bin\Debug\net7.0\TP VILLAGE.pdb
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\obj\Debug\net7.0\TP VILLAGE.dll
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\obj\Debug\net7.0\refint\TP VILLAGE.dll
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\obj\Debug\net7.0\TP VILLAGE.pdb
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\obj\Debug\net7.0\TP VILLAGE.genruntimeconfig.cache
+C:\Users\Administrateur\Documents\CSHARP\TP VILLAGE\obj\Debug\net7.0\ref\TP VILLAGE.dll
