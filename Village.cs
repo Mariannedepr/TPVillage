@@ -50,8 +50,9 @@ public class Village {
 
         //on va réattribuer la valeur de notre nouveau tableau à notre ancien tableau :
         listHouse = listHouse2;
-        this.villageois = listHouse.Length * House.villageois;
+        this.villageois = listHouse.Length * House.villageois;   //on ajoute 10 villageois
     }
+
 
         public void mineStone(int nbvillageois){
             //verif si pas trop de villageois par rapport au nb de villageois de base dans le village
@@ -86,6 +87,28 @@ public class Village {
                 myRessources.useWood(Forest.wood_cost * nbvillageois);
                 myRessources.addWood(forest.cutWood(nbvillageois)); 
             }  
-        }  
+        }
+
+        public void buildHouse(int nbHouse){
+        //il va me faire 3 pierres, 3 bois et 10 villageois pour construire une maison
+        //j'ai aussi créée un tableau de maisons qui regroupe toutes mes maisons
+        //premiere verif : si assez de villageois
+        //seconde verif : si assez de this.stone_needed par rapport à getstone? et assez de bois 
+        //si assez de ressources ajout de maison à notre tab ListHouse
+        if (House.wood_needed * this.villageois > getWood() || House.stone_needed * this.villageois > getStone()){
+            Console.WriteLine("nan la ya pas assez de ressources");
+        }
+        else 
+        {   //peite boucle pour dire qu'on applique addHouse à chaque fois qu'on utilise buildHouse
+            for (int i = 0; i < nbHouse; i++){
+                myRessources.useStone(House.stone_needed);
+                myRessources.useWood(House.wood_needed);
+                this.addHouse(new House());    //on ajoute une nouvelle house 
+            }
+            
+        }
+
+    }
+
 }
 
