@@ -19,6 +19,7 @@ public class Village {
         this.listHouse[0] = this.chefHome;
         this.Mine = new Mine();    //Creation d'une mine (affichage de "Mine created")
         this.forest = new Forest();
+    
     }
 
     public string getName(){
@@ -31,6 +32,10 @@ public class Village {
 
     public int getStone(){
         return myRessources.getStone();
+    }
+
+    public int getLevel(){
+        return myRessources.level;
     }
 
 //ajout de maisons dans notre tableau listHouse
@@ -53,7 +58,6 @@ public class Village {
         this.villageois = listHouse.Length * House.villageois;   //on ajoute 10 villageois
     }
 
-
         public void mineStone(int nbvillageois){
             //verif si pas trop de villageois par rapport au nb de villageois de base dans le village
             //else if verif si assez de pierres 
@@ -62,9 +66,9 @@ public class Village {
             //si c'est ok on pioche
 
             if (nbvillageois > this.villageois){
-                Console.WriteLine("ya pas assez de monde sorry");
+                Console.WriteLine("ya pas assez de monde pour tailler des pierres");
             }   else if (Mine.stone_cost * nbvillageois > getStone()  || Mine.wood_cost * nbvillageois >  getWood() ){
-                Console.WriteLine("ya pas assez de ressources sorry");
+                Console.WriteLine("ya pas assez de ressources pour tailler des pierres");
             }   else {
                     myRessources.useStone(Mine.stone_cost * nbvillageois);
                     myRessources.useWood(Mine.wood_cost * nbvillageois);
@@ -75,11 +79,11 @@ public class Village {
 
         public void cutWood(int nbvillageois){
             if (nbvillageois > this.villageois){
-                Console.WriteLine("ya pas assez de monde sorry");
+                Console.WriteLine("ya pas assez de monde pour couper du bois");
             }   
             else if (Forest.stone_cost * nbvillageois > getStone()  || Forest.wood_cost * nbvillageois >  getWood() )
             {
-                Console.WriteLine("ya pas assez de ressources sorry");
+                Console.WriteLine("ya pas assez de ressources pour couper du bois");
             }   
             else 
             {
@@ -89,14 +93,14 @@ public class Village {
             }  
         }
 
-        public void buildHouse(int nbHouse){
+    public void buildHouse(int nbHouse){
         //il va me faire 3 pierres, 3 bois et 10 villageois pour construire une maison
         //j'ai aussi créée un tableau de maisons qui regroupe toutes mes maisons
         //premiere verif : si assez de villageois
         //seconde verif : si assez de this.stone_needed par rapport à getstone? et assez de bois 
         //si assez de ressources ajout de maison à notre tab ListHouse
-        if (House.wood_needed * this.villageois > getWood() || House.stone_needed * this.villageois > getStone()){
-            Console.WriteLine("nan la ya pas assez de ressources");
+        if (House.wood_needed * nbHouse > getWood() || House.stone_needed * nbHouse > getStone()){
+            Console.WriteLine("nan la ya pas assez de ressources pour construire une maison");
         }
         else 
         {   //peite boucle pour dire qu'on applique addHouse à chaque fois qu'on utilise buildHouse
@@ -104,10 +108,22 @@ public class Village {
                 myRessources.useStone(House.stone_needed);
                 myRessources.useWood(House.wood_needed);
                 this.addHouse(new House());    //on ajoute une nouvelle house 
-            }
-            
+            }   
         }
+    }
 
+    public void upgradeRessources(){
+        myRessources.upgrade();
+        
+        
+    }
+
+    public void lookAround(){
+        if(myRessources.level >= 1){
+            myRessources.addStone(1);
+            myRessources.addWood(1);
+        }
+        
     }
 
 }
